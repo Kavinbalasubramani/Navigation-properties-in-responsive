@@ -1,0 +1,159 @@
+	body
+		{
+			font-family: sans-serif, 'open sans';
+		}
+		*
+		{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			text-decoration: none;
+		}
+		nav
+		{
+			height: 100px;
+			background: white;
+			position: sticky;
+		}
+		nav h1
+		{
+			font-size: 25px;
+			top: 32px;
+			left: 12%;
+			color: orange;
+			position: absolute;
+		}
+		nav ul
+		{
+			float: right;
+			margin-right: 140px;
+		}
+		nav ul li
+		{
+			display: inline-block;
+			line-height: 20px;
+			margin: 15px 10px 20px ;
+			border: 1px solid none ;
+			font-weight: bold;
+		}
+		nav ul li a
+		{
+			color: black;
+			position: relative;
+			font-size: 15px;
+			padding: 5px;
+			text-decoration: none;
+		}
+		nav ul li a:before
+		{
+			position: absolute;
+			content: '';
+			left: 0;
+			bottom: 0;
+			height: 3px;
+			width: 100%;
+			background: orange;
+			transform: scaleX(0);
+			transform-origin: right;
+			transition: transform 1s linear;
+		}
+		nav ul li a:hover:before
+		{
+			transform: scaleX(1);
+			transform-origin: left;
+
+		}
+		label #btn,
+		label #cancel
+		{
+			color: black;
+			font-size: 25px;
+			right: 0;
+			line-height: 60px;
+			margin-right: 40px;
+			cursor: pointer;
+			display: none;
+			position: absolute;
+			z-index: 1;
+		}
+		#check
+		{
+			display: none;
+		}
+		.carouselcontainer
+		{
+			
+			overflow: hidden;
+			z-index: -1;
+			position: absolute;
+		}
+		.carousel-inner img
+		{
+			width: 100%;
+
+		}
+		@media (max-width:1500px)
+        {
+			nav h1
+			{
+				left: 6%;
+				position: absolute;
+			}
+			nav ul
+			{
+				margin-right: 50px;
+			}
+        }
+		@media (max-width:1330px)
+		{
+			nav h1
+			{
+				left: 2%;
+				position: absolute;
+			}
+			nav ul
+			{
+				margin-right: 50px;
+			}
+		}
+	
+		@media (max-width:1220px)
+		{
+			label #btn
+			{
+				display: block;
+			}
+			nav ul li a
+			{
+				font-size: 20px;
+			}
+			ul
+			{
+
+				position: fixed;
+				width: 100%;
+				height: 100vh;
+				background: white;
+				top: 100px;
+				left:-100%;
+				text-align: center;
+				transition: all .8s;
+			}
+			nav ul li 
+			{
+				display: block;
+				margin: 30px 0;
+				line-height: 30px;
+			}
+			#check:checked ~ ul
+			{
+				left:0;
+			}
+			#check:checked ~ label #btn
+			{
+				display: none;
+			}
+			#check:checked ~ label #cancel
+			{
+				display: block;
+			}
